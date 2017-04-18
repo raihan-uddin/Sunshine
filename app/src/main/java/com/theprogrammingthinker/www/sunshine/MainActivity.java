@@ -2,12 +2,19 @@ package com.theprogrammingthinker.www.sunshine;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     private TextView mWeatherTextView;
 
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,5 +54,7 @@ public class MainActivity extends AppCompatActivity {
         for (String dummyWeatherDay : dummyWeatherData){
             mWeatherTextView.append(dummyWeatherDay + "\n\n\n");
         }
+
+
     }
 }
